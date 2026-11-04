@@ -1,0 +1,11 @@
+{
+  "name": "invalid_cycle",
+  "description": "Некоректні дані: цикл 2 -> 3 -> 4 -> 2",
+  "resources": {"R": 2},
+  "activities": {
+    "1": {"p": 2, "pred": [], "usage": {"R": 1}},
+    "2": {"p": 2, "pred": [1, 4], "usage": {"R": 1}},
+    "3": {"p": 2, "pred": [2], "usage": {"R": 1}},
+    "4": {"p": 2, "pred": [3], "usage": {"R": 1}}
+  }
+}

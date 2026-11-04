@@ -1,0 +1,15 @@
+{
+  "name": "no_resource_limits",
+  "description": "Ресурсу вистачає на всі роботи одночасно",
+  "resources": {"R": 100},
+  "activities": {
+    "A": {"p": 4, "pred": [], "usage": {"R": 3}},
+    "B": {"p": 6, "pred": [], "usage": {"R": 2}},
+    "C": {"p": 3, "pred": ["A"], "usage": {"R": 4}},
+    "D": {"p": 5, "pred": ["A"], "usage": {"R": 1}},
+    "E": {"p": 2, "pred": ["B", "C"], "usage": {"R": 5}},
+    "F": {"p": 4, "pred": ["D"], "usage": {"R": 2}},
+    "G": {"p": 3, "pred": ["E", "F"], "usage": {"R": 3}},
+    "H": {"p": 2, "pred": ["B"], "usage": {"R": 2}}
+  }
+}

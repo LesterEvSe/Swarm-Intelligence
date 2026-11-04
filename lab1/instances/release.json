@@ -1,0 +1,23 @@
+{
+  "name": "release",
+  "description": "Реліз вебсервісу, тривалості в робочих днях",
+  "resources": {"Backend": 3, "Frontend": 2, "QA": 1, "DevOps": 1},
+  "activities": {
+    "1": {"name": "Аналіз вимог", "p": 2, "pred": [], "usage": {"Backend": 1, "Frontend": 1}},
+    "2": {"name": "Проєктування API", "p": 3, "pred": [1], "usage": {"Backend": 2}},
+    "3": {"name": "Макети UI", "p": 3, "pred": [1], "usage": {"Frontend": 1}},
+    "4": {"name": "Схема БД, міграції", "p": 2, "pred": [2], "usage": {"Backend": 1}},
+    "5": {"name": "CI/CD пайплайн", "p": 3, "pred": [1], "usage": {"DevOps": 1}},
+    "6": {"name": "Авторизація", "p": 4, "pred": [2, 4], "usage": {"Backend": 2}},
+    "7": {"name": "Бізнес-логіка", "p": 5, "pred": [4], "usage": {"Backend": 2}},
+    "8": {"name": "Сторінки фронтенду", "p": 5, "pred": [3], "usage": {"Frontend": 2}},
+    "9": {"name": "Інтеграція фронтенду з API", "p": 3, "pred": [6, 8], "usage": {"Frontend": 1, "Backend": 1}},
+    "10": {"name": "Тест-кейси", "p": 2, "pred": [1], "usage": {"QA": 1}},
+    "11": {"name": "Автотести API", "p": 4, "pred": [6, 7, 10], "usage": {"QA": 1, "Backend": 1}},
+    "12": {"name": "Тестування UI", "p": 3, "pred": [9, 10], "usage": {"QA": 1, "Frontend": 1}},
+    "13": {"name": "Тестове середовище", "p": 2, "pred": [4, 5], "usage": {"DevOps": 1, "Backend": 1}},
+    "14": {"name": "Навантажувальне тестування", "p": 2, "pred": [11, 13], "usage": {"QA": 1, "DevOps": 1}},
+    "15": {"name": "Виправлення дефектів", "p": 3, "pred": [11, 12], "usage": {"Backend": 2, "Frontend": 1}},
+    "16": {"name": "Реліз", "p": 1, "pred": [14, 15], "usage": {"DevOps": 1, "Backend": 1, "Frontend": 1, "QA": 1}}
+  }
+}

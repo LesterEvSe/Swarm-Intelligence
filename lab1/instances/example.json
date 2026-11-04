@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "description": "Приклад з умови завдання",
+  "resources": {"R": 2},
+  "activities": {
+    "1": {"p": 3, "pred": [], "usage": {"R": 1}},
+    "2": {"p": 2, "pred": [1], "usage": {"R": 1}},
+    "3": {"p": 2, "pred": [1], "usage": {"R": 1}},
+    "4": {"p": 1, "pred": [2, 3], "usage": {"R": 2}}
+  }
+}
